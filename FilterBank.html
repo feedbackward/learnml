@@ -11783,6 +11783,7 @@ div#notebook {
 <li><a href="#2Dbg">Two-dimensional Gabor filters</a></li>
 <li><a href="#2Dapp">Application of 2D filter</a></li>
 </ul>
+<hr>
 
 </div>
 </div>
@@ -11999,48 +12000,8 @@ f(t) &amp; = A \exp\left( -\frac{t^2}{\sigma^2} \right).
 
 <span class="n">ax_filter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_inputs</span><span class="p">,</span> <span class="n">G_fil_real</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">t_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
 <span class="n">ax_filter</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t_inputs</span><span class="p">,</span> <span class="n">G_fil_imag</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">t_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
-</pre></div>
 
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7ff7a6ecb748&gt;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Display the figures prepared thus far.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -13154,10 +13115,15 @@ KxcjJEmSJElSr1yMkCRJkiRJvfoHQqaZes2VC9IAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises:">Exercises:<a class="anchor-link" href="#Exercises:">&#182;</a></h3><ol>
-<li>Look at the <em>freq</em> parameter and the left-most plot above. Are the number of cycles per unit of time what you expect? Modify <em>freq</em> to values such as 1, 4, 0.5, and 0.25, observing what happens each time.</li>
-<li>Change <em>sdev</em> to values such as 0.25 and 2, observing the impact. If necessary, adjust the range of <em>t_inputs</em> to get a better view.</li>
+<h3 id="Exercises-(A):">Exercises (A):<a class="anchor-link" href="#Exercises-(A):">&#182;</a></h3><ol>
+<li><p>Look at the <code>freq</code> parameter and the left-most plot above. Are the number of cycles per unit of time what you expect? Modify <code>freq</code> to values such as 1, 4, 0.5, and 0.25, observing what happens each time.</p>
+</li>
+<li><p>Change <code>sdev</code> to values such as 0.25 and 2, observing the impact. If necessary, adjust the range of <code>t_inputs</code> to get a better view.</p>
+</li>
+<li><p>Modify the <code>phase</code> parameter of just the imaginary part, such that it coincides with the real parse (they are out of phase by $90^{\circ}$, or $\pi/2$ radians).</p>
+</li>
 </ol>
+<hr>
 
 </div>
 </div>
@@ -13174,7 +13140,7 @@ KxcjJEmSJElSr1yMkCRJkiRJvfoHQqaZes2VC9IAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">para_HIGHFREQ</span> <span class="o">=</span> <span class="mi">5</span>
@@ -13837,7 +13803,7 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">signal</span>
@@ -14656,414 +14622,26 @@ zMzMrG8eUDAzMzMzMzOzvnlAwczMzMzMzMz69j/0/Q1nrf8qkgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises:">Exercises:<a class="anchor-link" href="#Exercises:">&#182;</a></h3><ol>
-<li>Using the above code, try numerous different values for the "freq" parameter stored in <em>myparas</em>, between <em>para_HIGHFREQ</em> and <em>para_HIGHFREQ</em>. Note how the filter better "picks up" the low-frequency and high-frequency components of our artificial signal as its "freq" parameter moves closer to <em>para_HIGHFREQ</em> and <em>para_HIGHFREQ</em> respectively.</li>
-<li>Play with the phase and standard deviation parameters as well, to explore their impact on the response of this simple one-dimensional filter.</li>
-<li>Modify the <em>my_signal</em> function such that it has low/med/high frequency components (linear combination of three periodic functions with different angular frequencies), and confirm that constructing a Gabor filter with the appropriate <em>freq</em> parameter for each can indeed extract the desired underlying component functions.</li>
+<h3 id="Exercises-(B):">Exercises (B):<a class="anchor-link" href="#Exercises-(B):">&#182;</a></h3><ol>
+<li><p>Using the above code, try numerous different values for the <code>freq</code> parameter stored in <code>myparas</code>, ranging between <code>para_LOWFREQ</code> and <code>para_HIGHFREQ</code>. Note how the filter better "picks up" the low-frequency and high-frequency components of our artificial signal as its <code>freq</code> parameter moves closer to <code>para_LOWFREQ</code> and <code>para_HIGHFREQ</code> respectively. Prepare and save some labeled plots that illustrate this.</p>
+</li>
+<li><p>Play with the phase and standard deviation parameters as well, and describe how their modification impacts the effect of the filter.</p>
+</li>
+<li><p>Modify the <code>my_signal</code> function such that it has low/med/high frequency components (linear combination of three periodic functions with distinct angular frequencies), and confirm that constructing a Gabor filter with the appropriate <code>freq</code> parameter for each can indeed extract each of the desired underlying component functions.</p>
+</li>
 </ol>
-<p>The key take-away from this exercise is that by preparing different filters specified by different parameters, we can extract different <strong>features</strong> of the underlying signal.</p>
+<p>The key take-away from this simple one-dimensional exercise is that by preparing different filters specified by different parameters, we can extract different <strong>features</strong> of the underlying signal. This basic principles extends directly to the multidimensional setting we will consider next.</p>
+<hr>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Frequency response of the Gabor filter is obtained analytically as the (complex) Fourier transform.</span>
-<span class="k">def</span> <span class="nf">G_ft_real</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">sdev</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Real part of the complex Gabor filter&#39;s frequency response.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">topass</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">freq</span><span class="p">)</span> <span class="o">*</span> <span class="n">sdev</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">G_envelope</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">topass</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sdev</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">sdev</span> <span class="o">*</span> <span class="n">env</span>
-    <span class="k">return</span> <span class="n">out</span>
-
-<span class="k">def</span> <span class="nf">G_ft_imag</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">sdev</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Imaginary part of the complex Gabor filter&#39;s frequency response.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">topass</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">freq</span><span class="p">)</span> <span class="o">*</span> <span class="n">sdev</span>
-    <span class="n">env</span> <span class="o">=</span> <span class="n">G_envelope</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">topass</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sdev</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">sdev</span> <span class="o">*</span> <span class="n">env</span>
-    <span class="k">return</span> <span class="n">out</span>
-
-
-<span class="k">def</span> <span class="nf">G_fr_real</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">paras</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Frequency response for our custom-built filter (real part).</span>
-<span class="sd">    Assumes that f is an array of frequency settings.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">G_ft_real</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;amp&quot;</span><span class="p">],</span> <span class="n">sdev</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;sdev&quot;</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;freq&quot;</span><span class="p">],</span> <span class="n">phase</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;phase&quot;</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">out</span>
-
-<span class="k">def</span> <span class="nf">G_fr_imag</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">paras</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    Frequency response for our custom-built filter (real part).</span>
-<span class="sd">    Assumes that f is an array of frequency settings.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">G_ft_imag</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;amp&quot;</span><span class="p">],</span> <span class="n">sdev</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;sdev&quot;</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;freq&quot;</span><span class="p">],</span> <span class="n">phase</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;phase&quot;</span><span class="p">])</span>
-    <span class="k">return</span> <span class="n">out</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myparas</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;amp&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
-           <span class="s2">&quot;sdev&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-           <span class="s2">&quot;freq&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
-           <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-
-<span class="n">f_inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
-
-<span class="n">myfig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">G_fr_real</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">G_fr_imag</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Frequency response of 1D Gabor filter&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Frequency (Hz)&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-Em5EPBF9BQAAAABJRU5ErkJggg==
-"
->
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="2Dbg"></a></p>
-<h2 id="Two-dimensional-Gabor-filters">Two-dimensional Gabor filters<a class="anchor-link" href="#Two-dimensional-Gabor-filters">&#182;</a></h2><p>Now that we have grasped the basic idea of what a Gabor filter (many other filters, in fact) can do, let us consider a more general version of the filter. The basic form, we repeat is</p>
+<h2 id="Two-dimensional-Gabor-filters">Two-dimensional Gabor filters<a class="anchor-link" href="#Two-dimensional-Gabor-filters">&#182;</a></h2><p>Now that we have grasped the basic idea of what a Gabor filter (and many other filters, in fact) can do, let us consider a more general version of the filter. The basic form, we repeat from above, is</p>
 <p>\begin{align}
 (\text{Filter output}) = (\text{Sinusoid carrier}) \times (\text{Gaussian envelope})
 \end{align}</p>
@@ -15096,10 +14674,15 @@ v &amp; = \omega \sin(\theta)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">G2_carrier_real</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">freqx</span><span class="p">,</span> <span class="n">freqy</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+<span class="k">def</span> <span class="nf">G2_carrier_real</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">freqx</span><span class="p">,</span> <span class="n">freqy</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Real part of the 2-D Gabor carrier.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
@@ -15120,7 +14703,7 @@ v &amp; = \omega \sin(\theta)
 <span class="k">def</span> <span class="nf">G2_envelope</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">sdev</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Gaussian envelope for a 2-D Gabor filter.</span>
-<span class="sd">    We assume that it is circular (same decrease in x/y directions).</span>
+<span class="sd">    We assume that it is circular (same rate of decrease in x/y directions).</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sdev</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">out</span>
@@ -15142,7 +14725,7 @@ v &amp; = \omega \sin(\theta)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">PIX_W</span> <span class="o">=</span> <span class="mi">128</span> <span class="c1"># image width, in pixels</span>
@@ -15170,7 +14753,7 @@ v &amp; = \omega \sin(\theta)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">G2_fil_real</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">paras</span><span class="p">):</span>
@@ -15216,7 +14799,7 @@ v &amp; = \omega \sin(\theta)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -15997,12 +15580,17 @@ Yew5Nvg3DMMwDMMwDMMwjD3n/weuIVEOPds1agAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The 2D spatial filter implemented above is a direct extension of the 1D temporal filter implemented previously, and has completely analogous parameters, as one can confirm in the exercises below.</p>
-<h3 id="Exercises:">Exercises:<a class="anchor-link" href="#Exercises:">&#182;</a></h3><ol>
-<li>Modify the <em>dir</em> parameter (corresponding to orientation parameter $\theta$), setting it to zero, $\pi/4$, $\pi/2$, and so on.</li>
-<li>Modify the <em>freqs</em> parameter and note the number of cycles over the full image. Set it such that the number of cycles in the X direction (left-right) over the full image is 5, 10, 50.</li>
-<li>Replace the real part with the imaginary part in the above code, noting the change in phase.</li>
-<li>Modify the standard deviation parameter such that its impact covers a large/small fraction of the image area.</li>
+<h3 id="Exercises-(C):">Exercises (C):<a class="anchor-link" href="#Exercises-(C):">&#182;</a></h3><ol>
+<li><p>Modify the <code>dir</code> parameter (corresponding to orientation parameter $\theta$), setting it to zero, $\pi/4$, $\pi/2$, and so on. Describe the qualitative changes in the filter output.</p>
+</li>
+<li><p>Modify the <code>freqs</code> parameter and note the number of cycles over the full image. Set <code>dir</code> and <code>freqs</code> such that the sinusoid only depends on the horizontal position (i.e., the leftmost plot looks like alternating vertical bars), and the number of cycles in the horizontal direction over the full image is five. Repeat, but with 10 cycles. Repeat once again for 25 cycles.</p>
+</li>
+<li><p>Replace the real part (<code>carrier_real</code> and <code>G2_fil_real</code>) with the imaginary part in the above code. Qualitatively, what change has taken place with respect to the effect of the filter?</p>
+</li>
+<li><p>Modify the standard deviation parameter such that its visible radius is approximately <em>half</em> the width/height of the domain pictured. Repeat, making it approximately a quarter. Again, one eighth.</p>
+</li>
 </ol>
+<hr>
 
 </div>
 </div>
@@ -16012,7 +15600,7 @@ Yew5Nvg3DMMwDMMwDMMwjD3n/weuIVEOPds1agAAAABJRU5ErkJggg==
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a id="2Dapp"></a></p>
-<h2 id="Application-of-2D-filter">Application of 2D filter<a class="anchor-link" href="#Application-of-2D-filter">&#182;</a></h2><p>Now it comes time to <em>apply</em> the filters to signals, now defined on the plane rather than the line. In this sense, the pixel values of an are considered to be the values taken by a signal defined on the plane.</p>
+<h2 id="Application-of-2D-filter">Application of 2D filter<a class="anchor-link" href="#Application-of-2D-filter">&#182;</a></h2><p>Now it comes time to <em>apply</em> the filters to signals, now defined on the plane rather than the line. In this sense, the pixel values of an image are considered to be the values taken by a signal defined on the plane (thus we call them "2D").</p>
 <p>We begin with reading and writing images from file. A standard library for doing this is <strong>imageio</strong> (<a href="http://imageio.github.io/">http://imageio.github.io/</a>). Assuming all the image files have been saved locally in advance, the following example shows how easy it is to visualize the content of image files using objects from this library.</p>
 
 </div>
@@ -16020,7 +15608,7 @@ Yew5Nvg3DMMwDMMwDMMwjD3n/weuIVEOPds1agAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">imageio</span>
@@ -21356,7 +20944,7 @@ UFBQUFBQUFBQUFBQUFCwLfz/bEk/vD3m1EEAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that the imageio library provides image objects (not typical <em>ndarray</em> objects), which are plotted as we would hope (all three channels are used).</p>
+<p>Note that the imageio library provides its own image objects (not typical <code>ndarray</code> objects), which are plotted as we would hope (all three channels are used).</p>
 <p>Let's take a look at individual channels from a single image.</p>
 
 </div>
@@ -21364,7 +20952,7 @@ UFBQUFBQUFBQUFBQUFCwLfz/bEk/vD3m1EEAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im</span> <span class="o">=</span> <span class="n">imageio</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s2">&quot;img/chelsea.png&quot;</span><span class="p">)</span>
@@ -25361,7 +24949,7 @@ M/6a0nL9AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
@@ -31569,7 +31157,7 @@ ioqKioqKioqKioqK+0YlGCoqKioqKioqKioqKioqKu4b/x+bZga/qZwlpAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skimage</span> <span class="k">import</span> <span class="n">color</span> <span class="k">as</span> <span class="n">col</span>
@@ -31626,7 +31214,7 @@ Shape: (300, 451, 3) Type: &lt;class &#39;numpy.ndarray&#39;&gt; First value (L*
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">im_L</span> <span class="o">=</span> <span class="n">im_cielab</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># the luminance channel of CIE-Lab.</span>
@@ -37028,10 +36616,25 @@ FAqFQuGr8f8AN2DI4p3vrccAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>While subtle, note that the two images are indeed distinct, and that by carrying out this transformation, instead of a three-dimensional image object, we end up with a 2D array (of <em>ndarray</em> type) that will be the signal to which we apply our 2D Gabor filters.</p>
-<p>Just as in the one-dimensional case, we shall use the convolution operation on two signals (the input signal and our filter) to produce a new signal, namely the Gabor filter response. The only difference here is that the domain is the real plane rather than the real line. Convolution is an extremely computationally intenseive procedure, and making use of standard libraries is recommended. We use the <em>ndimage</em> module from <strong>scipy</strong>, in particular the <em>convolve</em> function (see <a href="https://docs.scipy.org/doc/scipy/reference/ndimage.html">https://docs.scipy.org/doc/scipy/reference/ndimage.html</a>). This function has two main arguments:</p>
+<h3 id="Exercises-(D):">Exercises (D):<a class="anchor-link" href="#Exercises-(D):">&#182;</a></h3><ol>
+<li><p>Re-run the above steps for the other "stock" images we have prepared in the <code>img</code> directory. In addition to the cat (<code>chelsea.png</code>), there is also the boy (<code>bishop.png</code>) and the parrots (<code>parrots.png</code>). Just as above, separate and visualize the three colour channels of the RGB image, then make the conversion to CIE-L*a*b* space, and compare the luminosity channel with the off-the-shelf grayscale output. Save these images to file using <code>imwrite</code> (the counterpart to <code>imread</code>).</p>
+</li>
+<li><p>Compare the luminosity and grayscale forms of the three original images with others using different hardware; do the images (both luminance and grayscale) appear largely the same across hardware (different monitor types, etc.)? If there are differences for either or both of these, attempt to describe them.</p>
+</li>
+</ol>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Just as in the one-dimensional case, we shall use the convolution operation on two signals (the input signal and our filter) to produce a new signal, which shall form the Gabor filter response. The only difference here is that the domain is the real plane rather than the real line. Convolution is an extremely computationally intensive procedure, and making use of standard libraries is recommended. We use the <strong>ndimage</strong> module from <strong>scipy</strong>, in particular the <code>convolve</code> function (see <a href="https://docs.scipy.org/doc/scipy/reference/ndimage.html">https://docs.scipy.org/doc/scipy/reference/ndimage.html</a>). This function has two main arguments:</p>
 <ul>
-<li><em>input</em>: an <em>ndarray</em> object that will be our input signal, usually a particular digital image or individual frames of a movie.</li>
-<li><em>weights</em>: an <em>ndarray</em> object that contains the values of our 2D Gabor filter.</li>
+<li><code>input</code>: an <code>ndarray</code> object that will be our input signal, usually a particular digital image or individual frames of a movie.</li>
+<li><code>weights</code>: an <code>ndarray</code> object that contains the values of our 2D Gabor filter.</li>
 </ul>
 <p>Let's write up a function to generate a "kernel" of weights for use in convolutions. Typically the kernel array will be much smaller than the images we convolve them with.</p>
 
@@ -37040,7 +36643,7 @@ FAqFQuGr8f8AN2DI4p3vrccAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fil_kernel</span><span class="p">(</span><span class="n">paras</span><span class="p">,</span> <span class="n">n_stds</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
@@ -37091,7 +36694,7 @@ FAqFQuGr8f8AN2DI4p3vrccAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">skimage</span> <span class="k">import</span> <span class="n">filters</span> <span class="k">as</span> <span class="n">skfil</span>
@@ -37785,7 +37388,7 @@ EDIA/x9tocl7nLfB8wAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">ndimage</span> <span class="k">as</span> <span class="n">ndi</span>
@@ -37839,7 +37442,7 @@ Convolving w/ imaginary part (takes time)... OK.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">myfig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
@@ -43159,7 +42762,7 @@ cJAkSZIkSVNnwUGSJEmSJE3d/wKBHfVY3VjODAAAAABJRU5ErkJggg==
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Magnitude of the complex filter response.</span>
@@ -47735,6 +47338,22 @@ MjIyMjIyMjIyMjIyLowsMGRkZGRkZGRkZGRkZGRkZFwY/x/vMxoEM+vVDQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercises-(E):">Exercises (E):<a class="anchor-link" href="#Exercises-(E):">&#182;</a></h3><ol>
+<li><p>Explore how filter parameters impact the result of the response after convolution. In particular, what kind of role does each of <code>dir</code>, <code>freqs</code>, <code>stdev</code>, and <code>n_stds</code> play? Try extreme values of each, and describe the consequences.</p>
+</li>
+<li><p>As a follow-up to the previous exercise, repeat your investigation of the role of each parameter for each of the stock images (<code>chelsea.png</code>, <code>bishop.png</code>, <code>parrots.png</code>). In order to "pick up" relevant features, do you need to have rather different filter settings from image to image?</p>
+</li>
+</ol>
+<p>An important point should be reinforced here: in general, the learning machine will not (and indeed cannot) know the precise content of the images it will be presented with ahead of time. You have observed that different filter settings lead to high/low sensitivity, depending on the image contents. This implies that in order to have a model of this form that can capture a wide variety of image features for arbitrary images, a large variety of hand-built filters will be required.</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Using this large array of pixels can be unwieldy, so we shall take sub-patches of the image, and compute statistics of the magnitude values computed within each distinct patch. A bit more formally, if we partition the image $I$ into disjoint patches, say $\{I_{1},\ldots,I_{k}\}$ (all functions), then a natural response for the $i$th patch will be $\widetilde{r}_{i}$ defined as</p>
 <p>\begin{align}
 \widetilde{r}_{i} = \frac{1}{|\text{dom}(I_{i})|} \sum_{(a,b) \in \text{dom}(I_{i})} |I_{i}(a,b)|,
@@ -47750,7 +47369,7 @@ r_{i} = \log(1+\widetilde{r}_{i}).
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">patch_stats</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">grid_w</span><span class="p">,</span> <span class="n">grid_h</span><span class="p">):</span>
@@ -47820,6 +47439,13 @@ r_{i} = \log(1+\widetilde{r}_{i}).
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we have:</p>
+<ul>
+<li><p><code>patch_stats</code>: takes the desired grid size, and loops over each patch, computing the desired statistics.</p>
+</li>
+<li><p><code>nonlin</code>: the final non-linear compressive mapping, whose returned value will be used as a final feature value for our prediction tasks later.</p>
+</li>
+</ul>
 <p>Let's test that the per-patch statistics are indeed taking the sorts of values we expect.</p>
 
 </div>
@@ -47827,7 +47453,7 @@ r_{i} = \log(1+\widetilde{r}_{i}).
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mygrid_h</span> <span class="o">=</span> <span class="mi">5</span>
@@ -50459,8 +50085,11 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises:">Exercises:<a class="anchor-link" href="#Exercises:">&#182;</a></h3><ol>
-<li>Adjust the <em>sdev</em> parameter to comparatively large and small values; having done this, how do you think the grid size (via parameters <em>mygrid_h</em> and <em>mygrid_w</em>) should be adjusted? Try both coarse and fine grids.</li>
+<h3 id="Exercises-(F):">Exercises (F):<a class="anchor-link" href="#Exercises-(F):">&#182;</a></h3><ol>
+<li><p>Adjust the <code>sdev</code> parameter to comparatively large and small values; having done this, how do you think the grid size (via parameters <code>mygrid_h</code> and <code>mygrid_w</code>) should be adjusted? Try both coarse and fine grids, and comment on how the extracted feature values (right-most plot) change.</p>
+</li>
+<li><p>Repeat the above exercise for all three stock images (<code>chelsea.png</code>, <code>bishop.png</code>, <code>parrots.png</code>), making references to the qualitative differences in the original images.</p>
+</li>
 </ol>
 
 </div>
@@ -50477,7 +50106,7 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">G2_getfeatures</span><span class="p">(</span><span class="n">ims</span><span class="p">,</span> <span class="n">fil_paras</span><span class="p">,</span> <span class="n">gridshape</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -50535,10 +50164,10 @@ AAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises:">Exercises:<a class="anchor-link" href="#Exercises:">&#182;</a></h3><ol>
-<li><p>Using the <em>G2_getfeatures</em> function multiple times, create a "bank" of filters by creating multiple dictionaries to be passed via the argument <em>fil_paras</em>. Feature vectors from each distinct filter (specified by one parameter dict) should be concatenated in order to get one long feature vector for each image as the final output.</p>
+<h3 id="Exercises-(G):">Exercises (G):<a class="anchor-link" href="#Exercises-(G):">&#182;</a></h3><ol>
+<li><p>Using the <code>G2_getfeatures</code> function multiple times, create a "bank" of filters by creating multiple dictionaries to be passed via the argument <code>fil_paras</code>. Feature vectors from each distinct filter (specified by one parameter dict) should be concatenated in order to get one long feature vector for each image as the final output.</p>
 </li>
-<li><p>In addition to modifying filter parameters, experiment with other patch statistics besides the mean (median/max/min are already implemented).</p>
+<li><p>In addition to modifying filter parameters, experiment with other patch statistics besides the mean (median/max/min are already implemented). How does this impact the final feature values? Which of these statistics seems most useful in practice? Why?</p>
 </li>
 </ol>
 
@@ -50570,6 +50199,406 @@ AAAAAElFTkSuQmCC
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Miscellany:">Miscellany:<a class="anchor-link" href="#Miscellany:">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## Frequency response of the Gabor filter is obtained analytically as the (complex) Fourier transform.</span>
+<span class="k">def</span> <span class="nf">G_ft_real</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">sdev</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Real part of the complex Gabor filter&#39;s frequency response.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">topass</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">freq</span><span class="p">)</span> <span class="o">*</span> <span class="n">sdev</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">G_envelope</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">topass</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sdev</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">sdev</span> <span class="o">*</span> <span class="n">env</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">G_ft_imag</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">sdev</span><span class="p">,</span> <span class="n">freq</span><span class="p">,</span> <span class="n">phase</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Imaginary part of the complex Gabor filter&#39;s frequency response.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">topass</span> <span class="o">=</span> <span class="p">(</span><span class="n">f</span> <span class="o">-</span> <span class="n">freq</span><span class="p">)</span> <span class="o">*</span> <span class="n">sdev</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">G_envelope</span><span class="p">(</span><span class="n">t</span><span class="o">=</span><span class="n">topass</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sdev</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phase</span><span class="p">)</span> <span class="o">*</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">sdev</span> <span class="o">*</span> <span class="n">env</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+
+<span class="k">def</span> <span class="nf">G_fr_real</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">paras</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Frequency response for our custom-built filter (real part).</span>
+<span class="sd">    Assumes that f is an array of frequency settings.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">G_ft_real</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;amp&quot;</span><span class="p">],</span> <span class="n">sdev</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;sdev&quot;</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;freq&quot;</span><span class="p">],</span> <span class="n">phase</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;phase&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="k">def</span> <span class="nf">G_fr_imag</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">paras</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Frequency response for our custom-built filter (real part).</span>
+<span class="sd">    Assumes that f is an array of frequency settings.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">G_ft_imag</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">amp</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;amp&quot;</span><span class="p">],</span> <span class="n">sdev</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;sdev&quot;</span><span class="p">],</span> <span class="n">freq</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;freq&quot;</span><span class="p">],</span> <span class="n">phase</span><span class="o">=</span><span class="n">paras</span><span class="p">[</span><span class="s2">&quot;phase&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myparas</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;amp&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span>
+           <span class="s2">&quot;sdev&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s2">&quot;freq&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+           <span class="s2">&quot;phase&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
+
+<span class="n">f_inputs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+
+<span class="n">myfig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">G_fr_real</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">G_fr_imag</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f_inputs</span><span class="p">,</span> <span class="n">paras</span><span class="o">=</span><span class="n">myparas</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Frequency response of 1D Gabor filter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Frequency (Hz)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+Em5EPBF9BQAAAABJRU5ErkJggg==
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
