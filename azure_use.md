@@ -1,3 +1,12 @@
+---
+title: This will be used as the title-tag of the page head
+---
+
+hello
+=====
+
+**You are here!**
+
 # Using Azure
 This project is composed of a series of short, hands-on tutorials designed to provide some insight into the multi-faceted nature of machine learning tasks. These days, it is very easy for almost anyone to fire up a standard library, pass some vector data to a pre-trained model, and have that pre-fab system carry out some predictions or quantization. In many cases, however, the existing models and algorithms may not suit the data/task at hand, at which point it becomes necessary to *make your own tools*. This requires a more intimate understanding of what is going on "behind the scenes" when standard libraries are being run.
 
