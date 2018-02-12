@@ -16,4 +16,25 @@ Let's go through an example on Windows 10 (analogous procedures can be done with
 
 With this setup, initiate the connection by giving PuTTY the remote machine's public IP address and the user name (and public key, if applicable), and log in, presenting the password when prompted.
 
-Assuming a successful login, for our example we move to our desired working directory, and start up 
+Assuming a successful login, for our example we move to our desired working directory, and start up Jupyter notebook without a browser, using the desired port:
+
+```
+$ cd learnml
+$ jupyter notebook --no-browser --port=8889
+```
+
+After executing this command, a series of messages proceeds in the terminal window, culminating in the following:
+
+```
+The Jupyter Notebook is running at: http://localhost:8889/?token=XXXXXXXXXXX
+```
+
+where `XXXXXXXXXXX` is some sequence of alpha-numeric characters.
+
+Now, since we have set up our port forwarding from 8888 (local) to 8889 (remote), in terms of local operations, all we need to do is open up our local browswer, and in the URL address bar enter
+
+```
+http://localhost:8888/?token=XXXXXXXXXXX
+```
+
+noting that everything in this URL is the same as in the remote terminal, except we have replaced `8889` with `8888`. If all has worked correctly, we should have access to the remote Jupyter notebooks, with the functional convenience of a local browser.
