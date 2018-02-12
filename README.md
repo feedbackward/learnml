@@ -1,6 +1,3 @@
----
-title: Learning to "do" machine learning
----
 
 # Learning to "do" machine learning
 
