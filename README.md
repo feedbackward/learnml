@@ -11,7 +11,7 @@ This series of tutorials is designed to impart the key underlying ideas, design 
 - <a href="AlgoIntro.html">Basic format for learning algorithm design</a> (<a href="AlgoIntroJPN.html">JPN</a>)
 - <a href="AlgoSparseReg.html">Algorithms for training sparse regression models</a> (<a href="AlgoSparseRegJPN.html">JPN</a>)
 - <a href="FinishEncoder.html">Finishing the encoder</a> (<a href="FinishEncoderJPN.html">JPN</a>)
-- Appendix: <a href="azure_use.md">Using Azure</a>
+- Appendix: <a href="azure_use.html">Using Azure</a>
 
 All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.ipynb">Description of data sources</a> part of the tutorial, so please read this before starting.
 
