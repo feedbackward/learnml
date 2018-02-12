@@ -1,20 +1,19 @@
 ---
-title: This will be used as the title-tag of the page head
+title: Using Azure
 ---
 
-hello
-=====
-
-**You are here!**
-
 # Using Azure
-This project is composed of a series of short, hands-on tutorials designed to provide some insight into the multi-faceted nature of machine learning tasks. These days, it is very easy for almost anyone to fire up a standard library, pass some vector data to a pre-trained model, and have that pre-fab system carry out some predictions or quantization. In many cases, however, the existing models and algorithms may not suit the data/task at hand, at which point it becomes necessary to *make your own tools*. This requires a more intimate understanding of what is going on "behind the scenes" when standard libraries are being run.
 
-This series of tutorials is designed to impart the key underlying ideas, design principles, and technical procedures involved in developing a "learning machine." We prioritize hands-on examples, with inline blocks of Python code available throughout, for users to read, modify, and execute themselves. We have also endeavoured to make lucid the correspondence between concepts illustrated using mathematical formulae, and the concrete objects that appear in the code.
+For seminars with participants that have different personal computing setups, it can be useful to take advantage of cloud-based solutions in order to ensure everyone has access to the same hardware and software. Countless options exist, and while I have no particular preferences for any one service over another, in February 2018 I carried out a series of lectures using Microsoft's Azure service, in which 25+ participants were assigned their own instance of an Ubuntu-based *Data Science Virtual Machine* (DSVM). On this page, a few notes are recorded for posterity.
 
-- <a href="DataSources.html">Description of data sources</a> (<a href="DataSourcesJPN.html">JPN</a>)
+## Jupyter notebooks run remotely, viewed locally
 
-All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.ipynb">Description of data sources</a> part of the tutorial, so please read this before starting.
+Most of the information online regarding use of Jupyter notebooks on Azure seems to suggest using the X2Go Client to provide GUI access to the remote machine, within which Firefox (the default browser) can be used to view and edit Jupyter notebooks. This introduces some serious latency to each step in one's workflow. If all operations are going to be done via in-browser notebooks, then a better solution is to simply use SSH to log in to the remote machine, and using port forwarding, access the Jupyter server via a browser on the *local* machine.
 
-__Author and maintainer:__<br>
-Matthew J. Holland (Osaka University, Institute for Datability Science)
+Let's go through an example on Windows 10 (analogous procedures can be done with ssh from the shell of a UNIX-like system). To gain access to the remote shell, we use <a href="https://www.putty.org/">PuTTY</a>. When setting up the Azure DSVM (among other setups) there are two choices: (1) a password-based login, or (2) a SSH-based login. In the latter case, a public key of the proper format must be available on the local machine. The former requires just a user name and password at login. The latter requires in addition to this a public key on the local machine in the correct form. In any case, let's say we'll use port 8888 locally, and port 8889 remotely (these are typical, but arbitrary choices). The former is the source, and the latter is the destination. Setting up port forwarding in PuTTY:
+
+<img src="img/portforward_putty.png" alt="IMG: Port forwarding using Putty" />
+
+With this setup, initiate the connection by giving PuTTY the remote machine's public IP address and the user name (and public key, if applicable), and log in, presenting the password when prompted.
+
+Assuming a successful login, for our example we move to our desired working directory, and start up 
