@@ -14,7 +14,7 @@ This series of tutorials is designed to impart the key underlying ideas, design 
 - <a href="FinishEncoder.html">Finishing the encoder</a> (<a href="FinishEncoderJPN.html">JPN</a>)
 - Appendix: <a href="azure_use.html">Using Azure</a>
 
-All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.ipynb">Description of data sources</a> part of the tutorial, so please read this before starting.
+All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.html">Description of data sources</a> part of the tutorial, so please read this before starting.
 
 __Author and maintainer:__<br>
-Matthew J. Holland (Osaka University, Institute for Datability Science)
+<a href="http://feedbackward.com/">Matthew J. Holland</a> (Osaka University, Institute for Datability Science)
