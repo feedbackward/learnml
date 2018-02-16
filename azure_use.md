@@ -10,6 +10,8 @@ For seminars with participants that have different personal computing setups, it
 
 Most of the information online regarding use of Jupyter notebooks on Azure seems to suggest using the X2Go Client to provide GUI access to the remote machine, within which Firefox (the default browser) can be used to view and edit Jupyter notebooks. This introduces some serious latency to each step in one's workflow. If all operations are going to be done via in-browser notebooks, then a better solution is to simply use SSH to log in to the remote machine, and using port forwarding, access the Jupyter server via a browser on the *local* machine.
 
+### Windows case
+
 Let's go through an example on Windows 10 (analogous procedures can be done with ssh from the shell of a UNIX-like system). To gain access to the remote shell, we use <a href="https://www.putty.org/">PuTTY</a>. When setting up the Azure DSVM (among other setups) there are two choices: (1) a password-based login, or (2) a SSH-based login. In the latter case, a public key of the proper format must be available on the local machine. The former requires just a user name and password at login. The latter requires in addition to this a public key on the local machine in the correct form. In any case, let's say we'll use port 8888 locally, and port 8889 remotely (these are typical, but arbitrary choices). The former is the source, and the latter is the destination. Setting up port forwarding in PuTTY:
 
 <img src="img/portforward_putty.png" alt="IMG: Port forwarding using Putty" />
@@ -38,3 +40,20 @@ http://localhost:8888/?token=XXXXXXXXXXX
 ```
 
 noting that everything in this URL is the same as in the remote terminal, except we have replaced `8889` with `8888`. If all has worked correctly, we should have access to the remote Jupyter notebooks, with the functional convenience of a local browser.
+
+### Ubuntu case (16.04 LTS)
+
+
+### Alternative: setting up a password-based notebook server
+
+In the above examples, we considered the default case of using randomly-generated tokens to access the notebook server remotely. Doing the copying and pasting described above can be a bit of a nuisance, and indeed depending on your environment, copying from the remote desktop to the local one may require a bit of dexterity. This hassle can be easily circumvented by using a password set in advance for moderating access to the notebook server. To do this is simple. On the remote machine, run the following:
+
+```
+$ cd learnml
+$ jupyter notebook password
+> Enter password:
+> Verify password:
+```
+It should then respond with `Wrote hashed password to ...` where the path to a particular `.json` file is specified.
+
+With this password in place, in the above examples, instead of typing in the long URL+token string of text into the browser, one can simply enter `http://localhost:8888` and provide the password when prompted.
