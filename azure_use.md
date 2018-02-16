@@ -43,8 +43,25 @@ noting that everything in this URL is the same as in the remote terminal, except
 
 ### Ubuntu case (16.04 LTS)
 
+The UNIX-like case is even simpler than the Windows case. Here we use `ssh` from the command line to do SSH port-forwarding.
 
-### Alternative: setting up a password-based notebook server
+On the remote machine, once again, run
+
+```
+$ cd learnml
+$ jupyter notebook --no-browser --port=8889
+```
+
+to get the notebook server going. Then on the local machine, start the tunnel:
+
+```
+$ ssh -N -L localhost:8888:localhost:8889 REMOTE_USER@REMOTE_HOST
+```
+
+where `REMOTE_USER` is replaced with your username, and `REMOTE_USER` is the name or IP address of the remote server. Then from the browser of your local machine, access `localhost:8888` using the URL including a token, exactly as shown in the previous example.
+
+
+### Alternative to tokens: setting up a password-based notebook server
 
 In the above examples, we considered the default case of using randomly-generated tokens to access the notebook server remotely. Doing the copying and pasting described above can be a bit of a nuisance, and indeed depending on your environment, copying from the remote desktop to the local one may require a bit of dexterity. This hassle can be easily circumvented by using a password set in advance for moderating access to the notebook server. To do this is simple. On the remote machine, run the following:
 
