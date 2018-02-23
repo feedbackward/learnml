@@ -3,26 +3,6 @@ import numpy as np
 import sys
 
 
-class Redirect:
-    '''
-    Redirect standard output to a specified file object. This lets us
-    use print() to write directly to disk.
-    '''
-    
-    # Set new attribute.
-    def __init__(self, o_new):
-        self.new = o_new
-
-    # Redirect stdout.
-    def __enter__(self):
-        self.old = sys.stdout
-        sys.stdout = self.new
-
-    # Back to original stdout setting.
-    def __exit__(self, *args):
-        sys.stdout = self.old
-
-
 class DataInfo:
 
     def __init__(self):
@@ -113,14 +93,3 @@ class Data:
         val = (str(self.y_te.shape) if self.y_te is not None else str(None))
         s_yte = "y_te:" + val
         return s_Xtr + "\n" + s_Xte + "\n" + s_ytr + "\n" + s_yte + "\n"
-
-
-class Itin:
-    '''
-    A simple class which is instantiated using a pair of
-    dictionaries.
-    '''
-
-    def __init__(self, exp, mth):
-        self.exp = exp
-        self.mth = mth

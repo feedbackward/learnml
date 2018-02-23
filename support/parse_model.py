@@ -13,9 +13,6 @@ def model(dinfo):
     '''
     
     # Return the appropriate model object.
-    if dinfo.mname == "LgstReg":
-        return md.LgstReg(dinfo)
-
     if dinfo.mname == "LinReg":
         return md.LinReg(dinfo)
 
