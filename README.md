@@ -24,7 +24,7 @@ This series of tutorials is designed to impart the key underlying ideas, design 
 - <a href="FinishEncoder.html">Finishing the encoder</a> (<a href="FinishEncoderJPN.html">JPN</a>)
 
 
-All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.ipynb">description of data sources</a> part of the tutorial, so please read this before starting.
+All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="DataSources.html">description of data sources</a> part of the tutorial, so please read this before starting.
 
 
 ___
