@@ -1,104 +1,13 @@
 
-import math
 import numpy as np
-from scipy import signal
-from skimage import color as col
+import math
+import imageio
 from scipy import ndimage as ndi
+from scipy import stats
+from skimage import color as col
 
 
-def G_carrier_real(t, freq, phase):
-    '''
-    Real part of the carrier.
-    '''
-    topass = 2 * math.pi * freq * t + phase
-    out = np.cos(topass)
-    return out
-
-def G_carrier_imag(t, freq, phase):
-    '''
-    Imaginary part of the carrier.
-    '''
-    topass = 2 * math.pi * freq * t + phase
-    out = np.sin(topass)
-    return out
-
-
-def G_envelope(t, amp, sdev):
-    '''
-    The impact of the filter is controlled by a Gaussian function.
-    '''
-    out = amp * np.exp( (-(t/sdev)**2) )
-    return out
-
-
-def G_fil_real(t, paras):
-    '''
-    Custom-built filter response (real part).
-    Assumes that t is an array of temporal inputs.
-    '''
-    carrier = G_carrier_real(t=t, freq=paras["freq"], phase=paras["phase"])
-    envelope = G_envelope(t=t, amp=paras["amp"], sdev=paras["sdev"])
-    out = carrier * envelope
-    return out
-
-def G_fil_imag(t, paras):
-    '''
-    Custom-built filter response (imaginary part).
-    Assumes that t is an array of temporal inputs.
-    '''
-    carrier = G_carrier_imag(t=t, freq=paras["freq"], phase=paras["phase"])
-    envelope = G_envelope(t=t, amp=paras["amp"], sdev=paras["sdev"])
-    out = carrier * envelope
-    return out
-
-
-def my_signal(t):
-    
-    highfreq = 0.25 * np.sin((2*math.pi*para_HIGHFREQ*t))
-    lowfreq = 2 * np.sin((2*math.pi*para_LOWFREQ*t))
-    
-    cond = (np.abs(t) <= 5)
-    signal = highfreq + lowfreq
-    out = np.select([cond], [signal])
-    
-    return out
-
-
-## Frequency response of the Gabor filter is obtained analytically as the (complex) Fourier transform.
-def G_ft_real(f, amp, sdev, freq, phase):
-    '''
-    Real part of the complex Gabor filter's frequency response.
-    '''
-    topass = (f - freq) * sdev
-    env = G_envelope(t=topass, amp=1, sdev=1)
-    out = math.cos(phase) * amp * sdev * env
-    return out
-
-def G_ft_imag(f, amp, sdev, freq, phase):
-    '''
-    Imaginary part of the complex Gabor filter's frequency response.
-    '''
-    topass = (f - freq) * sdev
-    env = G_envelope(t=topass, amp=1, sdev=1)
-    out = math.sin(phase) * amp * sdev * env
-    return out
-
-
-def G_fr_real(f, paras):
-    '''
-    Frequency response for our custom-built filter (real part).
-    Assumes that f is an array of frequency settings.
-    '''
-    out = G_ft_real(f=f, amp=paras["amp"], sdev=paras["sdev"], freq=paras["freq"], phase=paras["phase"])
-    return out
-
-def G_fr_imag(f, paras):
-    '''
-    Frequency response for our custom-built filter (real part).
-    Assumes that f is an array of frequency settings.
-    '''
-    out = G_ft_imag(f=f, amp=paras["amp"], sdev=paras["sdev"], freq=paras["freq"], phase=paras["phase"])
-    return out
+########## VARIOUS ROUTINES ############
 
 
 def G2_carrier_real(x, y, freqx, freqy, phase):
@@ -122,7 +31,7 @@ def G2_carrier_imag(x, y, freqx, freqy, phase):
 def G2_envelope(x, y, amp, sdev):
     '''
     Gaussian envelope for a 2-D Gabor filter.
-    We assume that it is circular (same decrease in x/y directions).
+    We assume that it is circular (same rate of decrease in x/y directions).
     '''
     out = amp * np.exp(-(x**2+y**2)/(sdev**2))
     return out
@@ -248,16 +157,7 @@ def nonlin(u):
 
 
 
-def nonlin(u):
-    '''
-    A non-linear function to pass per-patch magnitude statistics through.
-    '''
-    
-    return np.log(1+u)
-
-
-
-def G2_getfeatures(ims, fil_paras, gridshape, mode="reflect", cval=0):
+def G2_getfeatures(ims, fil_paras, gridshape, mode="reflect", cval=0, verbose=True):
     '''
     A routine which takes an array of images with 4 coords.
     Dim 1 and 2: pixel position.
@@ -267,14 +167,22 @@ def G2_getfeatures(ims, fil_paras, gridshape, mode="reflect", cval=0):
     
     num_ims = ims.shape[3]
     num_feats = gridshape[0] * gridshape[1]
-    
     out = np.zeros(num_ims*num_feats, dtype=np.float32).reshape((num_ims,num_feats))
+
+    if (num_ims / 50 <= 10):
+        multval = 1
+    else:
+        multval = num_ims // 50
+        
     
     # Generate the kernel prior to loop over images.
     fil_values = fil_kernel(paras=fil_paras, n_stds=2)
     
     # Iterate over images.
     for i in range(num_ims):
+
+        if (i % multval == 0) and verbose:
+            print("Images processed so far:", i)
         
         featvec = np.arange(0, dtype=np.float32)
         
@@ -301,3 +209,142 @@ def G2_getfeatures(ims, fil_paras, gridshape, mode="reflect", cval=0):
     
     # Output is the array of feature vectors, one feature vector for each image.
     return out
+
+
+def soft_thres(u,mar):
+    '''
+    The so-called "soft threshold" function, as made
+    popular by the LASSO model and all related
+    learning procedures.
+
+    Input "u" will be an array, and "mar" will be the
+    margin of the soft-threshold, a non-negative real
+    value.
+    '''
+    return np.sign(u) * np.clip(a=(np.abs(u)-mar), a_min=0, a_max=None)
+
+
+def corr(w, X, y):
+    '''
+    Wrapper for Pearson's correlation coefficient,
+    computed for the predicted response and the
+    actual response.
+
+    Args:
+    w is a (d x 1) matrix taking real values.
+    X is a (k x d) matrix of n observations.
+    y is a (k x 1) matrix taking real values.
+    
+    Output: a real-valued correlation coefficient.
+    '''
+    yest = np.dot(X,w)
+    if np.sum(np.abs(yest)) < 0.0001:
+        return 0.0
+    else:
+        return stats.pearsonr(yest.flatten(), y.flatten())[0]
+
+
+################### VARIOUS CLASSES #####################
+
+class Data:
+    '''
+    General data class for supervised regression tasks.
+    '''
+    
+    def __init__(self):
+        self.X_tr = None
+        self.X_te = None
+        self.y_tr = None
+        self.y_te = None
+    
+    def init_tr(self, X, y):
+        self.X_tr = X
+        self.y_tr = y
+        
+    def init_te(self, X, y):
+        self.X_te = X
+        self.y_te = y    
+
+
+class LeastSqL1:
+    '''
+    Model for least-squared linear regression, with l1-norm
+    regularization option.
+    Assuming X is (n x d), y is (n x 1), w is (d x 1) numpy array.
+    '''
+    
+    def predict(self, w, X):
+        return np.dot(X,w)
+    
+    # Loss function related.
+    def l_imp(self, w, X, y, lam_l1=0):
+        if lam_l1 > 0:
+            l1reg = lam_l1 * np.sum(np.abs(w))
+        else:
+            l1reg = 0
+        return l1reg + (y - self.predict(w=w, X=X))**2 / 2
+    
+    def l_tr(self, w, data, lam_l1=0):
+        return self.l_imp(w=w, X=data.X_tr, y=data.y_tr, lam_l1=lam_l1)
+    
+    def l_te(self, w, data, lam_l1=0):
+        return self.l_imp(w=w, X=data.X_te, y=data.y_te, lam_l1=lam_l1)
+    
+    # Per-coordinate gradient computations.
+    def g_j_imp(self, j, w, X, y, lam_l1=0):
+        if lam_l1 > 0:
+            g_l1reg = lam_l1 * np.sign(w[j,0])
+        else:
+            g_l1reg = 0
+            
+        return g_l1reg + (y-self.predict(w=w, X=X)) * (-1) * np.take(a=X, indices=[j], axis=1)
+    
+    def g_j_tr(self, j, w, data, lam_l1=0):
+        return self.g_j_imp(j=j, w=w, X=data.X_tr, y=data.y_tr, lam_l1=lam_l1)
+
+    def g_j_te(self, j, w, data, lam_l1=0):
+        return self.g_j_imp(j=j, w=w, X=data.X_te, y=data.y_te, lam_l1=lam_l1)
+    
+
+# The algorithm class.
+
+class Algo_CDL1:
+    '''
+    Coordinate descent (CD) implementation for minimization
+    of the "LASSO" objective, namely the sum of squared errors
+    regularized by an l1 penalty.
+    '''
+    
+    def __init__(self, w_init, t_max, lam_l1):
+        self.w = w_init
+        self.t = None
+        self.t_max = t_max
+        self.lam_l1 = lam_l1
+        
+    def __iter__(self):
+        self.t = 0
+        # Shuffle up the indices before starting.
+        self.idx = np.random.choice(self.w.size, size=self.w.size, replace=False)
+        self.idxj = self.idx[0]
+        return self
+        
+    def __next__(self):
+        if self.t >= self.t_max:
+            raise StopIteration
+
+    def update(self, model, data):
+        
+        # Computations related to the update.
+        n = data.X_tr.shape[0]
+        modidx = (self.t-1) % self.w.size
+        self.idxj = self.idx[modidx] # circuits around shuffled coords.
+        self.w[self.idxj,0] = 0 # current para, but with jth coord set to zero.
+        g_j = -np.mean(model.g_j_tr(j=self.idxj, w=self.w, data=data, lam_l1=0))
+        g_j = g_j * n / (n-1) # rescale
+        
+        # Compute the solution to the one-dimensional optimization,
+        # using it to update the parameters.
+        self.w[self.idxj,0] = soft_thres(u=g_j, mar=self.lam_l1)
+        
+        # Monitor update.
+        self.t += 1
