@@ -38,3 +38,10 @@ All the main contents of this tutorial make use of data; some of it is simulated
 
 ## Downloading tutorial materials
 
+If you have `git`, then the recommended procedure is to run:
+
+```
+git clone https://github.com/feedbackward/learnml.git
+```
+
+For those with some aversion towards git (for whatever reason), there are compressed archives available for direct download from this GitHub page as well.
