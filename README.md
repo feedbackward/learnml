@@ -8,8 +8,10 @@ This series of tutorials is designed to impart the key underlying ideas, design 
 - <a href="SetupYours.html">Working on your own machine</a>
 - <a href="https://feedbackward.github.io/learnml/azure_use.html">Cloud services: Using Azure</a>
 
+http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/XXXXXXX
+
 #### Getting data ready
-- <a href="DataSources.html">Description of data sources</a> (<a href="DataSourcesJPN.html">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.htmlXXXXXXXXXX">Description of data sources</a> (<a href="DataSourcesJPN.html">JPN</a>)
 - <a href="DataMNIST.html">Preparation of raw (binary) data</a> (<a href="DataMNISTJPN.html">JPN</a>)
 - <a href="Datavim-2.html">Preparation of raw data for encoding task</a> (<a href="Datavim-2JPN.html">JPN</a>)
 
