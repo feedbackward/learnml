@@ -1,18 +1,25 @@
 ---
-title: Using Azure
+title: Using cloud-based solutions
 ---
 
-# Using Azure
+# Using cloud-based solutions
 
-For seminars with participants that have different personal computing setups, it can be useful to take advantage of cloud-based solutions in order to ensure everyone has access to the same hardware and software. Countless options exist, and while I have no particular preferences for any one service over another, in February 2018 I carried out a series of lectures using Microsoft's Azure service, in which 25+ participants were assigned their own instance of an Ubuntu-based *Data Science Virtual Machine* (DSVM). On this page, a few notes are recorded for posterity.
+For seminars with participants that have different personal computing setups, it can be useful to take advantage of cloud services to ensure that everyone has access to the same system in terms of software (and effectively the same system in terms of hardware). I've used both of the following for running seminars with between 25-50 participants:
+
+- Microsoft Azure, Ubuntu-based *Data Science Virtual Machine* (DSVM)
+
+- Amazon Web Services (Elastic Compute Cloud, EC2), Ubuntu-based *Deep Learning AMI* (Amazon Machine Image)
+
+Both worked very smoothly. I found the latter a fair bit faster, but either one works just fine. Here are a few notes for posterity that were useful for both MS and Amazon settings.
+
 
 ## Jupyter notebooks run remotely, viewed locally
 
-Most of the information online regarding use of Jupyter notebooks on Azure seems to suggest using the X2Go Client to provide GUI access to the remote machine, within which Firefox (the default browser) can be used to view and edit Jupyter notebooks. This introduces some serious latency to each step in one's workflow. If all operations are going to be done via in-browser notebooks, then a better solution is to simply use SSH to log in to the remote machine, and using port forwarding, access the Jupyter server via a browser on the *local* machine.
+Some people online suggest using the X2Go Client to provide GUI access to the remote machine, within which Firefox (the default browser) can be used to view and edit Jupyter notebooks. This introduces some serious latency to each step in one's workflow. If all operations are going to be done via in-browser notebooks, then a better solution is to simply use SSH to log in to the remote machine, and using port forwarding, access the Jupyter server via a browser on the *local* machine.
 
 ### Windows case
 
-Let's go through an example on Windows 10 (analogous procedures can be done with ssh from the shell of a UNIX-like system). To gain access to the remote shell, we use <a href="https://www.putty.org/">PuTTY</a>. When setting up the Azure DSVM (among other setups) there are two choices: (1) a password-based login, or (2) a SSH-based login. In the latter case, a public key of the proper format must be available on the local machine. The former requires just a user name and password at login. The latter requires in addition to this a public key on the local machine in the correct form. In any case, let's say we'll use port 8888 locally, and port 8889 remotely (these are typical, but arbitrary choices). The former is the source, and the latter is the destination. Setting up port forwarding in PuTTY:
+Let's go through an example on Windows 10 (analogous procedures can be done with ssh from the shell of a UNIX-like system). To gain access to the remote shell, we use <a href="https://www.putty.org/">PuTTY</a>. When setting up the instance, let's assume we set it to use an SSH-based login (this is usually the default), in which a private key is downloaded or generated, and must be stored on the local machine. All that remains is the "tunneling" setup. In any case, let's say we'll use port 8888 locally, and port 8889 remotely (these are typical, but arbitrary choices). The former is the source, and the latter is the destination. Setting up port forwarding in PuTTY:
 
 <img src="img/portforward_putty.png" alt="IMG: Port forwarding using Putty" />
 
@@ -40,6 +47,7 @@ http://localhost:8888/?token=XXXXXXXXXXX
 ```
 
 noting that everything in this URL is the same as in the remote terminal, except we have replaced `8889` with `8888`. If all has worked correctly, we should have access to the remote Jupyter notebooks, with the functional convenience of a local browser.
+
 
 ### Ubuntu case (16.04 LTS)
 
