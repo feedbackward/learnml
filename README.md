@@ -12,26 +12,31 @@ __Author and maintainer:__<br>
 
 Thanks to the superb nbviewer service, you can easily view static versions of the notebooks by following the links below. To actually modify the code and run it yourself, download the materials in whatever form you like, `cd` to the appropriate directory, and run `jupyter notebook` (in the case of running on a remote server, follow the instructions <a href="https://feedbackward.github.io/learnml/cloud_use.html">here</a>).
 
-
 #### Getting your hardware/software set up
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/SetupYours.ipynb">Working on your own machine</a>
-- <a href="https://feedbackward.github.io/learnml/cloud_use.html">Using cloud-based solutions</a>
+- <a href="https://feedbackward.github.io/learnml/azure_use.html">Cloud services: Using Azure</a>
+
 
 #### Getting data ready
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.ipynb">Description of data sources</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSourcesJPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataMNIST.ipynb">Preparation of raw (binary) data</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataMNISTJPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Datavim-2.ipynb">Preparation of raw data for encoding task</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Datavim-2JPN.ipynb">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST.ipynb">MNIST handwritten digits</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST_JPN.ipynb">JPN</a>, old) *(in progress)*
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_CIFAR10.ipynb">CIFAR-10 tiny images</a> *(in progress)*
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_Misc.ipynb">Miscellaneous benchmark data sets</a> *(in progress)*
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_vim-2.ipynb">vim-2: visual stimulus and BOLD response</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_vim-2_JPN.ipynb">JPN</a>)
 
-#### Preparing a model
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBankJPN.ipynb">JPN</a>)
+#### Fundamentals of implementing learning algorithms
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro.ipynb">Framework for prototyping</a>
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers.ipynb">Classifier models</a>
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder.ipynb">Practice with first-order algorithms</a>
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg.ipynb">Learning algorithms for sparse regression</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg_JPN.ipynb">JPN</a>)
 
-#### Designing a learning algorithm
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/AlgoIntro.ipynb">Basic format for learning algorithm design</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/AlgoIntroJPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/AlgoSparseReg.ipynb">Algorithms for training sparse regression models</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/AlgoSparseRegJPN.ipynb">JPN</a>)
-
-#### Doing some machine learning
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoderJPN.ipynb">JPN</a>)
-
+#### Applied topics
+- Encoder learning
+ - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBankJPN.ipynb">JPN</a>)
+ - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoderJPN.ipynb">JPN</a>)
+- Re-constructing the experiments of Johnson and Zhang
+ - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/ChainerWorkshop.ipynb">Using deep learning API to expedite implementation</a>
+ - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Learn_JZ.ipynb">SVRG and numerical tests</a>
 
 All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.ipynb">description of data sources</a> part of the tutorial, so please read this before starting.
 
