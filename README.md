@@ -32,11 +32,11 @@ Thanks to the superb nbviewer service, you can easily view static versions of th
 
 #### Applied topics
 - Encoder learning
- - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBankJPN.ipynb">JPN</a>)
- - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoderJPN.ipynb">JPN</a>)
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBankJPN.ipynb">JPN</a>)
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoderJPN.ipynb">JPN</a>)
 - Re-constructing the experiments of Johnson and Zhang
- - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/ChainerWorkshop.ipynb">Using deep learning API to expedite implementation</a>
- - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Learn_JZ.ipynb">SVRG and numerical tests</a>
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/ChainerWorkshop.ipynb">Using deep learning API to expedite implementation</a>
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Learn_JZ.ipynb">SVRG and numerical tests</a>
 
 All the main contents of this tutorial make use of data; some of it is simulated, and some of it is real. The real-world data must be acquired from the original sources. These are described and linked to in the <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.ipynb">description of data sources</a> part of the tutorial, so please read this before starting.
 
