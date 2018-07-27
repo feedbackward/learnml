@@ -14,7 +14,7 @@ Thanks to the superb nbviewer service, you can easily view static versions of th
 
 #### Getting your hardware/software set up
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/SetupYours.ipynb">Working on your own machine</a>
-- <a href="https://feedbackward.github.io/learnml/azure_use.html">Cloud services: Using Azure</a>
+- <a href="https://feedbackward.github.io/learnml/cloud_use.html">Using cloud-based solutions</a>
 
 #### Getting data ready
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.ipynb">Description of data sources</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSourcesJPN.ipynb">JPN</a>)
