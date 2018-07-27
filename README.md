@@ -16,16 +16,15 @@ Thanks to the superb nbviewer service, you can easily view static versions of th
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/SetupYours.ipynb">Working on your own machine</a>
 - <a href="https://feedbackward.github.io/learnml/azure_use.html">Cloud services: Using Azure</a>
 
-
 #### Getting data ready
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSources.ipynb">Description of data sources</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/DataSourcesJPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST.ipynb">MNIST handwritten digits</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST_JPN.ipynb">JPN</a>, old) *(in progress)*
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_CIFAR10.ipynb">CIFAR-10 tiny images</a> *(in progress)*
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_Misc.ipynb">Miscellaneous benchmark data sets</a> *(in progress)*
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST.ipynb">MNIST handwritten digits</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_MNIST_JPN.ipynb">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_CIFAR10.ipynb">CIFAR-10 tiny images</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_CIFAR10_JPN.ipynb">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_Misc.ipynb">Miscellaneous benchmark data sets</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_Misc_JPN.ipynb">JPN</a>)
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_vim-2.ipynb">vim-2: visual stimulus and BOLD response</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Data_vim-2_JPN.ipynb">JPN</a>)
 
 #### Fundamentals of implementing learning algorithms
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro.ipynb">Framework for prototyping</a>
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro.ipynb">Framework for prototyping</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro_JPN.ipynb">JPN</a>)
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers.ipynb">Classifier models</a>
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder.ipynb">Practice with first-order algorithms</a>
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg.ipynb">Learning algorithms for sparse regression</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg_JPN.ipynb">JPN</a>)
