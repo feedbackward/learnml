@@ -183,9 +183,11 @@ class LinearL1(LinReg):
             return self.g_j_imp(j=j, w=w, X=data.X_te[n_idx,:],
                                 y=data.y_te[n_idx,:],
                                 lamreg=lamreg)
-        
-        
-class Classifier(Model):
+
+
+import models
+
+class Classifier(models.Model):
     '''
     Generic classifier model, an object with methods
     for both training and evaluating classifiers.
@@ -307,52 +309,6 @@ class Classifier(Model):
         return {"rate": frac_incorrect,
                 "PRF1": prec_rec}
 
-    # Need to re-implement l_tr, l_te, g_tr, and
-    # g_te in order to utilize C_*, the one-hot
-    # representation. Doing it this way lets us
-    # get around having to compute it every time
-    # we evaluate a loss/grad.
-    def l_tr(self, w, data, n_idx=None, lamreg=None):
-        if n_idx is None:
-            return self.l_imp(w=w, X=data.X_tr,
-                              C=self.C_tr,
-                              lamreg=lamreg)
-        else:
-            return self.l_imp(w=w, X=data.X_tr[n_idx,:],
-                              C=self.C_tr[n_idx,:],
-                              lamreg=lamreg)
-    
-    def l_te(self, w, data, n_idx=None, lamreg=None):
-        if n_idx is None:
-            return self.l_imp(w=w, X=data.X_te,
-                              C=self.C_te,
-                              lamreg=lamreg)
-        else:
-            return self.l_imp(w=w, X=data.X_te[n_idx,:],
-                              C=self.C_te[n_idx,:],
-                              lamreg=lamreg)
-
-    def g_tr(self, w, data, n_idx=None, lamreg=None):
-        if n_idx is None:
-            return self.g_imp(w=w, X=data.X_tr,
-                              C=self.C_tr,
-                              lamreg=lamreg)
-        else:
-            return self.g_imp(w=w, X=data.X_tr[n_idx,:],
-                              C=self.C_tr[n_idx,:],
-                              lamreg=lamreg)
-    
-    def g_te(self, w, data, n_idx=None, lamreg=None):
-        if n_idx is None:
-            return self.g_imp(w=w, X=data.X_te,
-                              C=self.C_te,
-                              lamreg=lamreg)
-        else:
-            return self.g_imp(w=w, X=data.X_te[n_idx,:],
-                              C=self.C_te[n_idx,:],
-                              lamreg=lamreg)
-
-
 
 class LogisticReg(Classifier):
     '''
@@ -360,7 +316,7 @@ class LogisticReg(Classifier):
     '''
 
     def __init__(self, data=None):
-
+        
         # Given data info, load up the (X,y) data.
         super(LogisticReg, self).__init__(data=data)
         
@@ -434,6 +390,27 @@ class LogisticReg(Classifier):
         else:
             penalty = lamreg * np.linalg.norm(W)**2
             return err + penalty
+    
+    
+    def l_tr(self, w, data, n_idx=None, lamreg=None):
+        if n_idx is None:
+            return self.l_imp(w=w, X=data.X_tr,
+                              C=self.C_tr,
+                              lamreg=lamreg)
+        else:
+            return self.l_imp(w=w, X=data.X_tr[n_idx,:],
+                              C=self.C_tr[n_idx,:],
+                              lamreg=lamreg)
+    
+    def l_te(self, w, data, n_idx=None, lamreg=None):
+        if n_idx is None:
+            return self.l_imp(w=w, X=data.X_te,
+                              C=self.C_te,
+                              lamreg=lamreg)
+        else:
+            return self.l_imp(w=w, X=data.X_te[n_idx,:],
+                              C=self.C_te[n_idx,:],
+                              lamreg=lamreg)
         
         
     def g_imp(self, w, X, C, lamreg=0):
@@ -476,6 +453,27 @@ class LogisticReg(Classifier):
             return G
         else:
             return G + lamreg*2*w.T
+        
+
+    def g_tr(self, w, data, n_idx=None, lamreg=None):
+        if n_idx is None:
+            return self.g_imp(w=w, X=data.X_tr,
+                              C=self.C_tr,
+                              lamreg=lamreg)
+        else:
+            return self.g_imp(w=w, X=data.X_tr[n_idx,:],
+                              C=self.C_tr[n_idx,:],
+                              lamreg=lamreg)
+    
+    def g_te(self, w, data, n_idx=None, lamreg=None):
+        if n_idx is None:
+            return self.g_imp(w=w, X=data.X_te,
+                              C=self.C_te,
+                              lamreg=lamreg)
+        else:
+            return self.g_imp(w=w, X=data.X_te[n_idx,:],
+                              C=self.C_te[n_idx,:],
+                              lamreg=lamreg)
 
 
 # Chainer-related models.
