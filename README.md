@@ -25,8 +25,8 @@ Thanks to the superb nbviewer service, you can easily view static versions of th
 
 #### Fundamentals of implementing learning algorithms
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro.ipynb">Framework for prototyping</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro_JPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers.ipynb">Classifier models</a>
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder.ipynb">Practice with first-order algorithms</a>
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers.ipynb">Classifier models</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers_JPN.ipynb">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder.ipynb">Practice with first-order algorithms</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder_JPN.ipynb">JPN</a>)
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg.ipynb">Learning algorithms for sparse regression</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg_JPN.ipynb">JPN</a>)
 
 #### Applied topics
