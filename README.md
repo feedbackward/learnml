@@ -5,7 +5,7 @@ This project is composed of a series of short, hands-on tutorials designed to pr
 This series of tutorials is designed to impart the key underlying ideas, design principles, and technical procedures involved in developing a "learning machine." We prioritize hands-on examples, with inline blocks of Python code available throughout, for users to read, modify, and execute themselves. We have also endeavoured to make lucid the correspondence between concepts illustrated using mathematical formulae, and the concrete objects that appear in the code.
 
 __Author and maintainer:__<br>
-<a href="http://feedbackward.com/">Matthew J. Holland</a> (Osaka University, Institute for Datability Science)
+<a href="https://feedbackward.com/">Matthew J. Holland</a> (Osaka University, Institute for Datability Science)
 
 
 ## Viewing the tutorial
