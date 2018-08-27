@@ -27,12 +27,12 @@ Thanks to the superb nbviewer service, you can easily view static versions of th
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro.ipynb">Framework for prototyping</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FrameworkIntro_JPN.ipynb">JPN</a>)
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers.ipynb">Classifier models</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Classifiers_JPN.ipynb">JPN</a>)
 - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder.ipynb">Practice with first-order algorithms</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_FirstOrder_JPN.ipynb">JPN</a>)
-- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg.ipynb">Learning algorithms for sparse regression</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg_JPN.ipynb">JPN</a>)
+- <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg.ipynb">Learning algorithms for sparse regression</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Algo_SparseReg_JPN.ipynb">JPN</a>)
 
 #### Applied topics
 - Encoder learning
-  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBankJPN.ipynb">JPN</a>)
-  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (old <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoderJPN.ipynb">JPN</a>)
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank.ipynb">Building features using a Gabor filter bank</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FilterBank_JPN.ipynb">JPN</a>)
+  - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder.ipynb">Finishing the encoder</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/FinishEncoder_JPN.ipynb">JPN</a>)
 - Re-constructing the experiments of Johnson and Zhang
   - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/ChainerWorkshop.ipynb">Using deep learning API to expedite implementation</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/ChainerWorkshop_JPN.ipynb">JPN</a>)
   - <a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Learn_JZ.ipynb">SVRG and numerical tests</a> (<a href="http://nbviewer.jupyter.org/github/feedbackward/learnml/blob/master/Learn_JZ_JPN.ipynb">JPN</a>)
