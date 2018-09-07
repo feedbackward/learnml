@@ -11,7 +11,7 @@ class Model:
         self.name = name
 
     def l_imp(self, w=None, X=None, y=None, lamreg=None):
-        return None
+        raise NotImplementedError
     
     def l_tr(self, w, data, n_idx=None, lamreg=None):
         if n_idx is None:
@@ -34,7 +34,7 @@ class Model:
                               lamreg=lamreg)
 
     def g_imp(self, w=None, X=None, y=None, lamreg=None):
-        return None
+        raise NotImplementedError
     
     def g_tr(self, w, data, n_idx=None, lamreg=None):
         if n_idx is None:
@@ -241,10 +241,9 @@ class Classifier(Model):
 
     def classify(self, X):
         '''
-        Returns None by default.
         Must be implemented by sub-classes.
         '''
-        return None
+        raise NotImplementedError
 
 
     def class_perf(self, y_est, y_true):

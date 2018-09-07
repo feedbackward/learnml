@@ -96,29 +96,26 @@ class Algo_LineSearch:
 
     def newdir(self, model, data):
         '''
-        By default returns None. This will be
-        implemented by sub-classes that inherit
-        this class.
+        This will be implemented by sub-classes
+        that inherit this class.
         '''
-        return None
+        raise NotImplementedError
     
 
     def monitor_update(self, model, data):
         '''
-        By default returns None. This will be
-        implemented by sub-classes that inherit
-        this class.
+        This will be implemented by sub-classes
+        that inherit this class.
         '''
-        return None
+        raise NotImplementedError
 
     
     def cost_update(self, model, data):
         '''
-        By default returns None. This will be
-        implemented by sub-classes that inherit
-        this class.
+        This will be implemented by sub-classes
+        that inherit this class.
         '''
-        return None
+        raise NotImplementedError
 
     
     def print_state(self):
